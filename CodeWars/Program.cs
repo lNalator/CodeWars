@@ -48,6 +48,14 @@ internal class Program
                     ProductFib_Test.Tests(4895);
                     break;
                 }
+            case "deadfish":
+                {
+                    //TODO - Add input control for tests
+                    //  (make it so user can input what he want to test)
+
+                    Deadfish_Test.Tests("iiisdosodddddiso");
+                    break;
+                }
             default:
                 {
                     goto Start;
