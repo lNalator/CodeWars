@@ -1,5 +1,4 @@
 # CodeWars
-<br/>
 🇬🇧
 <br/>
 This is a repo, keeping track of most of the katas (exercices) I did on the site Code Wars.
