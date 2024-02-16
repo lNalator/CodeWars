@@ -10,25 +10,25 @@ namespace CodeWars.Ressources
     {
         public class Node
         {
-            public Node next { get; set; }
+            public Node Next { get; set; }
         }
 
-        public static Node createChain(int tailSize, int loopSize)
+        public static Node CreateChain(int tailSize, int loopSize)
         {
             var startNode = new Node();
             var currNode = startNode;
             for (var i = 0; i < tailSize; i++)
             {
-                currNode.next = new Node();
-                currNode = currNode.next;
+                currNode.Next = new Node();
+                currNode = currNode.Next;
             }
             var loopStartNode = currNode;
             for (var i = 0; i < loopSize - 1; i++)
             {
-                currNode.next = new Node();
-                currNode = currNode.next;
+                currNode.Next = new Node();
+                currNode = currNode.Next;
             }
-            currNode.next = loopStartNode;
+            currNode.Next = loopStartNode;
             return startNode;
         }
     }

@@ -12,21 +12,21 @@ namespace CodeWars.Katas._5_kyu
         public static int Method(LoopDetector.Node startNode)
         {
             LoopDetector.Node tortoise = startNode;
-            LoopDetector.Node hare = startNode.next;
+            LoopDetector.Node hare = startNode.Next;
 
             // Finding a meeting point in the loop
             while (tortoise != hare)
             {
-                tortoise = tortoise.next;
-                hare = hare.next.next;
+                tortoise = tortoise.Next;
+                hare = hare.Next.Next;
             }
 
             // Finding the size of the loop
             int loopSize = 1;
-            hare = hare.next;
+            hare = hare.Next;
             while (tortoise != hare)
             {
-                hare = hare.next;
+                hare = hare.Next;
                 loopSize++;
             }
 

@@ -16,10 +16,10 @@ namespace CodeWars.Katas._5_kyu.Tests
             var n2 = new LoopDetector.Node();
             var n3 = new LoopDetector.Node();
             var n4 = new LoopDetector.Node();
-            n1.next = n2;
-            n2.next = n3;
-            n3.next = n4;
-            n4.next = n2;
+            n1.Next = n2;
+            n2.Next = n3;
+            n3.Next = n4;
+            n4.Next = n2;
             Assert.That(NodeSize.Method(n1), Is.EqualTo(3));
         }
 
@@ -28,7 +28,7 @@ namespace CodeWars.Katas._5_kyu.Tests
         {
             var tailSize = rnd.Next(500, 1000);
             var loopSize = rnd.Next(500, 1000);
-            var n1 = LoopDetector.createChain(tailSize, loopSize);
+            var n1 = LoopDetector.CreateChain(tailSize, loopSize);
             Assert.That(NodeSize.Method(n1), Is.EqualTo(loopSize));
 
         }
@@ -38,7 +38,7 @@ namespace CodeWars.Katas._5_kyu.Tests
         {
             var tailSize = rnd.Next(5000, 10000);
             var loopSize = rnd.Next(5000, 10000);
-            var n1 = LoopDetector.createChain(tailSize, loopSize);
+            var n1 = LoopDetector.CreateChain(tailSize, loopSize);
             Assert.That(NodeSize.Method(n1), Is.EqualTo(loopSize));
 
         }
@@ -49,7 +49,7 @@ namespace CodeWars.Katas._5_kyu.Tests
         {
             var tailSize = rnd.Next(50000, 1000000);
             var loopSize = rnd.Next(50000, 1000000);
-            var n1 = LoopDetector.createChain(tailSize, loopSize);
+            var n1 = LoopDetector.CreateChain(tailSize, loopSize);
             Assert.That(NodeSize.Method(n1), Is.EqualTo(loopSize));
 
         }
