@@ -37,5 +37,10 @@ namespace CodeWars.Katas
 
             return result.ToArray();
         }
+
+        internal static double Parse(string data)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

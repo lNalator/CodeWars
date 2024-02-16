@@ -1,20 +1,63 @@
-﻿using System;
+﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeWars.Katas.Tests
 {
+    [TestFixture]
     internal class Deadfish_Test
     {
-        public static void Tests(string inputs)
+        private static object[] sampleTestCases = new object[]
         {
-            foreach(int x in Deadfish.Method(inputs))
+            new object[] {"iiisdoso", new int[] {8, 64}},
+            new object[] {"iiisdosodddddiso", new int[] {8, 64, 3600}},
+        };
+
+        [Test, TestCaseSource("sampleTestCases")]
+        public void SampleTest(string data, int[] expected)
+        {
+            Assert.That(Deadfish.Method(data), Is.EqualTo(expected));
+        }
+
+        private static Random rnd = new Random();
+
+        private static int[] solution(string data)
+        {
+            List<int> output = new List<int>();
+            int value = 0;
+
+            foreach (char op in data)
             {
-                Console.WriteLine("result : " + x);
+                if (op == 'i') { ++value; }
+                else if (op == 'd') { --value; }
+                else if (op == 's') { value *= value; }
+                else if (op == 'o') { output.Add(value); }
             }
-            
+
+            return output.ToArray();
+        }
+
+        private static string getRandomDeadfish()
+        {
+            string deadfish = "";
+            for (int i = 0; i < 7; ++i)
+            {
+                deadfish += "idso"[rnd.Next(0, 4)];
+            }
+            return deadfish + 'o';
+        }
+
+        [Test]
+        public void RandomTests()
+        {
+            for (int i = 0; i < 100; ++i)
+            {
+                string test = getRandomDeadfish();
+                int[] expected = solution(test);
+                int[] actual = Deadfish.Method(test);
+                Assert.That(actual, Is.EqualTo(expected));
+            }
         }
     }
 }

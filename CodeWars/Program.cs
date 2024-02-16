@@ -5,7 +5,7 @@ using CodeWars.Katas.Tests;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    public static void ProgramMain(string[] args)
     {
         Console.WriteLine("Hello, World!");
 
@@ -29,38 +29,41 @@ internal class Program
         {
             case "in array":
                 {
-                    //TODO - Add input control for tests
+                    //TODO - Add input control for tests (NUnit)
                     //  (make it so user can input what he want to test)
-                    InArray_Test.Tests();
                     break;
                 }
             case "repeat adjacent":
                 {
-                    //TODO - Add input control for tests
+                    //TODO - Add input control for tests (NUnit)
                     //  (make it so user can input what he want to test)
-                    RepeatAdjacent_Test.Tests();
                     break;
                 }
             case "product fib":
                 {
-                    //TODO - Add input control for tests
+                    //TODO - Add input control for tests (NUnit)
                     //  (make it so user can input what he want to test)
-                    ProductFib_Test.Tests(4895);
                     break;
                 }
             case "deadfish":
                 {
-                    //TODO - Add input control for tests
+                    //TODO - Add input control for tests (NUnit)
                     //  (make it so user can input what he want to test)
 
-                    Deadfish_Test.Tests("iiisdosodddddiso");
+                    break;
+                }
+            case "node loop":
+                {
+                    //TODO - Add input control for tests (NUnit)
+                    //  (make it so user can input what he want to test)
+
+
                     break;
                 }
             default:
                 {
                     goto Start;
                 }
-
         }
     }
 }
