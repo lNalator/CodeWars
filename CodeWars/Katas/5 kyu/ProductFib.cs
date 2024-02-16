@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeWars.Katas
+namespace CodeWars.Katas._5_kyu
 {
-    internal class ProductFib
+    public class ProductFib
     {
         public static ulong[] Method(ulong prod)
         {

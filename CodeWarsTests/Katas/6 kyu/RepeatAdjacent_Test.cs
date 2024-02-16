@@ -6,91 +6,88 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using NUnit.Framework.Legacy;
 
-namespace CodeWars.Katas.Tests
+namespace CodeWars.Katas._6_kyu.Tests
 {
     [TestFixture]
     internal class RepeatAdjacent_Test
     {
-        public int An(string s)
+        private static int An(string s)
         {
             var r = Regex.Matches(s, "((.)\\2+(?!\\2)){2,}");
             //Console.WriteLine(string.Join("|||",r.OfType<Match>().Select(x=>x.Value)));
             return r.OfType<Match>().Count();
         }
 
-        public string rndtest()
+        private string Rndtest()
         {
-            var len = rand(1, 20);
+            var len = Rand(1, 20);
             var r = new List<string>();
-            for (var i = 0; i < len; i++) r.Add(rand(0, 1) > 0 ? "" + rndcl() : new string(rndcl(), rand(2, 7)));
+            for (var i = 0; i < len; i++) r.Add(Rand(0, 1) > 0 ? "" + Rndcl() : new string(Rndcl(), Rand(2, 7)));
             return string.Join("", r);
         }
 
         //Tools
-        public void shuff(List<int> r)
+        private void Shuff(List<int> r)
         {
             for (int i = 0; i < 50; i++)
             {
-                int idx1 = rand(0, r.Count - 1), idx2 = rand(0, r.Count - 1);
-                var tt = r[idx1];
-                r[idx1] = r[idx2];
-                r[idx2] = tt;
+                int idx1 = Rand(0, r.Count - 1), idx2 = Rand(0, r.Count - 1);
+                (r[idx2], r[idx1]) = (r[idx1], r[idx2]);
             }
         }
-        public string repeat(string c, int n)
+        private static string Repeat(string c, int n)
         {
             var s = new string('&', n);
             return Regex.Replace(s, "&", c);
         }
 
-
-        Random rndnum = new Random(unchecked((int)DateTime.Now.Ticks));
-        public int rand(int a, int b)
+        readonly Random rndnum = new(unchecked((int)DateTime.Now.Ticks));
+        private int Rand(int a, int b)
         {
-            return a > b ? rand(b, a) : rndnum.Next(a, b + 1);
+            return a > b ? Rand(b, a) : rndnum.Next(a, b + 1);
         }
-        public int[] rndarr(int minlen, int maxlen, int minv, int maxv)
+        private int[] Rndarr(int minlen, int maxlen, int minv, int maxv)
         {
-            var len = rand(minlen, maxlen);
+            var len = Rand(minlen, maxlen);
             var r = new int[len];
-            for (var i = 0; i < len; i++) r[i] = rand(minv, maxv);
+            for (var i = 0; i < len; i++) r[i] = Rand(minv, maxv);
             return r;
         }
-        public string rnds(int n)
+        private string Rnds(int n)
         {
             var len = n;
             var rs = new List<char>();
-            for (int i = 0; i < len; i++) rs.Add(rndcl());
+            for (int i = 0; i < len; i++) rs.Add(Rndcl());
             return string.Join("", rs);
         }
-        public string rndss(int n)
+        private string Rndss(int n)
         {
             var len = n;
             var rs = new List<string>();
-            for (int i = 0; i < len; i++) rs.Add(rnds(rand(3, 7)));
+            for (int i = 0; i < len; i++) rs.Add(Rnds(Rand(3, 7)));
             return string.Join(" ", rs);
         }
-        public string rnds2(int n)
+        private string Rnds2(int n)
         {
             var len = n;
             var rs = new List<char>();
-            for (int i = 0; i < len; i++) rs.Add(rndch());
+            for (int i = 0; i < len; i++) rs.Add(Rndch());
             return string.Join("", rs);
         }
-        public char rndcl()
+        private char Rndcl()
         {
             var allc = "abcdefghijklmnopqrstuvwxyz";
-            return allc[rand(0, allc.Length - 1)];
+            return allc[Rand(0, allc.Length - 1)];
         }
-        public char rndchl()
+        private char Rndchl()
         {
             var allc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            return allc[rand(0, allc.Length - 1)];
+            return allc[Rand(0, allc.Length - 1)];
         }
-        public char rndch()
+        private char Rndch()
         {
             var allc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            return allc[rand(0, allc.Length - 1)];
+            return allc[Rand(0, allc.Length - 1)];
         }
         [Test]
         public void Test1__Basic_Tests()
@@ -116,11 +113,9 @@ namespace CodeWars.Katas.Tests
         [Test]
         public void Test2__100_Random_Tests()
         {
-            var passed = "<font size=2 color='#8FBC8F'><b>Test Passed!</b></font>";
-
             for (int i = 0; i < 100; i++)
             {
-                var ab = rndtest();
+                var ab = Rndtest();
                 //var cd=rand(0,3)>0?rand(10000,1048576):rand(1,10000);
                 //var cd=rand(0,100000);
                 Console.WriteLine("<font size=2 color='#CFB53B'>Testing for: " +

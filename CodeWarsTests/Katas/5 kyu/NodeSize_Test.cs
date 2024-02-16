@@ -3,12 +3,12 @@ using NUnit.Framework;
 using NUnit.Framework.Legacy;
 using System;
 
-namespace CodeWars.Katas.Tests
+namespace CodeWars.Katas._5_kyu.Tests
 {
     [TestFixture]
     internal class NodeSize_Test
     {
-        Random rnd = new Random();
+        readonly Random rnd = new();
         [Test]
         public void FourNodesWithLoopSize3()
         {

@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using NUnit.Framework.Legacy;
 
-namespace CodeWars.Katas.Tests
+namespace CodeWars.Katas._6_kyu.Tests
 {
     [TestFixture]
     internal class InArray_Test
@@ -47,8 +47,8 @@ namespace CodeWars.Katas.Tests
         public void Test5()
         {
             string[] a1 = new string[] { "cod", "code", "wars", "ewar", "ar" };
-            string[] a2 = new string[] { };
-            string[] r = new string[] { };
+            string[] a2 = Array.Empty<string>();
+            string[] r = Array.Empty<string>();
             Assert.That(InArray.Method(a1, a2), Is.EqualTo(r));
         }
         
@@ -75,7 +75,7 @@ namespace CodeWars.Katas.Tests
         {
             string[] a1 = new string[] { "ohio", "code", "1346", "1028", "art" };
             string[] a2 = new string[] { "Carolina", "Ohio", "4600", "NY", "California" };
-            string[] r = new string[] { };
+            string[] r = Array.Empty<string>();
             Assert.That(InArray.Method(a1, a2), Is.EqualTo(r));
         }
 

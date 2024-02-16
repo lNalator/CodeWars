@@ -3,28 +3,28 @@ using NUnit.Framework.Legacy;
 using System;
 using System.Collections.Generic;
 
-namespace CodeWars.Katas.Tests
+namespace CodeWars.Katas._6_kyu.Tests
 {
     [TestFixture]
     internal class Deadfish_Test
     {
-        private static object[] sampleTestCases = new object[]
+        private static readonly object[] sampleTestCases = new object[]
         {
             new object[] {"iiisdoso", new int[] {8, 64}},
             new object[] {"iiisdosodddddiso", new int[] {8, 64, 3600}},
         };
 
-        [Test, TestCaseSource("sampleTestCases")]
+        [Test, TestCaseSource(nameof(sampleTestCases))]
         public void SampleTest(string data, int[] expected)
         {
             Assert.That(Deadfish.Method(data), Is.EqualTo(expected));
         }
 
-        private static Random rnd = new Random();
+        private static readonly Random rnd = new();
 
-        private static int[] solution(string data)
+        private static int[] Solution(string data)
         {
-            List<int> output = new List<int>();
+            List<int> output = new();
             int value = 0;
 
             foreach (char op in data)
@@ -38,7 +38,7 @@ namespace CodeWars.Katas.Tests
             return output.ToArray();
         }
 
-        private static string getRandomDeadfish()
+        private static string GetRandomDeadfish()
         {
             string deadfish = "";
             for (int i = 0; i < 7; ++i)
@@ -53,8 +53,8 @@ namespace CodeWars.Katas.Tests
         {
             for (int i = 0; i < 100; ++i)
             {
-                string test = getRandomDeadfish();
-                int[] expected = solution(test);
+                string test = GetRandomDeadfish();
+                int[] expected = Solution(test);
                 int[] actual = Deadfish.Method(test);
                 Assert.That(actual, Is.EqualTo(expected));
             }

@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using NUnit.Framework.Legacy;
 
-namespace CodeWars.Katas.Tests
+namespace CodeWars.Katas._5_kyu.Tests
 {
     [TestFixture]
     internal class ProductFib_Test
@@ -94,7 +94,7 @@ namespace CodeWars.Katas.Tests
                        832040,1346269,2178309,3524578,5702887,9227465,14930352,
                        24157817,39088169,63245986};
 
-            Random rnd = new Random();
+            Random rnd = new();
             for (int k = 0; k < 15; k++)
             {
                 int rn = rnd.Next(0, 28);

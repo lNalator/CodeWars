@@ -1,11 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System;
-using CodeWars.Katas.Tests;
-
-internal class Program
+﻿internal class Program
 {
-    public static void ProgramMain(string[] args)
+    public static void ProgramMain()
     {
         Console.WriteLine("Hello, World!");
 
@@ -27,52 +22,12 @@ internal class Program
         }
         switch (input)
         {
-            case "in array":
-                {
-                    //TODO - Add input control for tests (NUnit)
-                    //  (make it so user can input what he want to test)
-                    break;
-                }
-            case "repeat adjacent":
-                {
-                    //TODO - Add input control for tests (NUnit)
-                    //  (make it so user can input what he want to test)
-                    break;
-                }
-            case "product fib":
-                {
-                    //TODO - Add input control for tests (NUnit)
-                    //  (make it so user can input what he want to test)
-                    break;
-                }
-            case "deadfish":
-                {
-                    //TODO - Add input control for tests (NUnit)
-                    //  (make it so user can input what he want to test)
-
-                    break;
-                }
-            case "node loop":
-                {
-                    //TODO - Add input control for tests (NUnit)
-                    //  (make it so user can input what he want to test)
-
-
-                    break;
-                }
+            
             default:
                 {
+                    //TODO - Add NUnit test console control based on the input
                     goto Start;
                 }
         }
     }
 }
-
-
-
-
-
-
-
-
-//See https://aka.ms/new-console-template for more information

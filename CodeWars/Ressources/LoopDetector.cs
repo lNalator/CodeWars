@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeWars.Ressources
 {
-    internal class LoopDetector
+    public class LoopDetector
     {
         public class Node
         {

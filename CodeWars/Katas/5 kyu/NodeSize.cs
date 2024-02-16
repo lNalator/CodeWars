@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeWars.Katas
+namespace CodeWars.Katas._5_kyu
 {
-    internal class NodeSize
+    public class NodeSize
     {
         public static int Method(LoopDetector.Node startNode)
         {

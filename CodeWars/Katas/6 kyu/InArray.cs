@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeWars.Katas
+namespace CodeWars.Katas._6_kyu
 {
-    internal class InArray
+    public class InArray
     {
         public static string[] Method(string[] array1, string[] array2)
         {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeWars.Katas
+namespace CodeWars.Katas._6_kyu
 {
-    internal class Deadfish
+    public class Deadfish
     {
         public static int[] Method(string data)
         {
