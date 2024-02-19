@@ -10,7 +10,7 @@ namespace CodeWars.Ressources
     {
         public class Node
         {
-            public Node Next { get; set; }
+            public Node? Next { get; set; }
         }
 
         public static Node CreateChain(int tailSize, int loopSize)
